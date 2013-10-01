@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  vault: 1.5
+  bars: 1.5
+  beam: 1.5
+  floor: 1.5
+  all_around: 1.5
+
+two:
+  vault: 1.5
+  bars: 1.5
+  beam: 1.5
+  floor: 1.5
+  all_around: 1.5

@@ -1,0 +1,25 @@
+<%= form_for(@score) do |f| %>
+	<div class="field">
+		<p>vault</p>
+		<%= f.text_field :vault %>
+	</div>
+	<div class="field">
+		<p>bars</p>
+		<%= f.text_field :bars %>
+	</div>
+	<div class="field">
+		<p>beam</p>
+		<%= f.text_field :beam %>
+	</div>
+	<div class="field">
+		<p>floor</p>
+		<%= f.text_field :floor %>
+	</div>
+	<div class="field">
+		<p>all_around</p>
+		<%= f.text_field :all_around %>
+	</div>	
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

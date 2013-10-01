@@ -1,0 +1,18 @@
+<%= form_for(@gymnast) do |f| %>
+	<div class="field">
+		<p>name</p>
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<p>college</p>
+		<%= f.text_field :college %>
+	</div>
+	<div class="field">
+		<p>class</p>
+		<%= f.text_field :class %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
+

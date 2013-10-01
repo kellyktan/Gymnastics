@@ -1,0 +1,19 @@
+<table>
+	<tr>
+		<td>vault</td>
+		<td>bars</td>
+		<td>beam</td>
+		<td>floor</td>
+		<td>all_around</td>
+	</tr>
+<% @scores.each do |score| %>
+	<tr>
+		<td><%= score.id %></td>
+		<td><%= score.vault %></td>
+		<td><%= score.bars %></td>
+		<td><%= score.beam %></td>
+		<td><%= score.floor %></td>
+		<td><%= score.all_around %></td>
+	</tr>
+<% end %>
+</table>

@@ -1,0 +1,15 @@
+<table>
+	<tr>
+		<td>name</td>
+		<td>date</td>
+		<td>location</td>
+	</tr>
+<% @meets.each do |meet| %>
+	<tr>
+		<td><%= meet.id %></td>
+		<td><%= meet.name %></td>
+		<td><%= meet.date %></td>
+		<td><%= meet.location %></td>
+	</tr>
+<% end %>
+</table>
