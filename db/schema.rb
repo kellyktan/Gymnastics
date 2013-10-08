@@ -11,19 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001144651) do
+ActiveRecord::Schema.define(:version => 20131008155801) do
 
   create_table "gymnasts", :force => true do |t|
     t.string   "name"
     t.string   "college"
-    t.integer  "class"
+    t.integer  "classz"
+    t.integer  "meet_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "meets", :force => true do |t|
     t.string   "name"
-    t.datetime "date"
+    t.date     "date"
     t.string   "location"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20131001144651) do
     t.float    "beam"
     t.float    "floor"
     t.float    "all_around"
+    t.integer  "gymnast_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

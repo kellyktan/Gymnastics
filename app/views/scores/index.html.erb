@@ -8,12 +8,15 @@
 	</tr>
 <% @scores.each do |score| %>
 	<tr>
-		<td><%= score.id %></td>
 		<td><%= score.vault %></td>
 		<td><%= score.bars %></td>
 		<td><%= score.beam %></td>
 		<td><%= score.floor %></td>
 		<td><%= score.all_around %></td>
+
+		<td><%= link_to "show score", score_path(score.id) %></td>
+		<td><%= link_to "edit score", edit_score_path(score.id) %></td>
+		<td><%= link_to "delete score", score, confirm: "OK to delete?", method: :delete %></td>
 	</tr>
 <% end %>
 </table>

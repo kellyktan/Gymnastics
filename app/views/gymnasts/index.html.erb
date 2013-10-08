@@ -2,14 +2,19 @@
 	<tr>
 		<td>name</td>
 		<td>college</td>
-		<td>class</td>
+		<td>classz</td>
+		<td>meet</td>
 	</tr>
-<% @gymnast.each do |gymnast| %>
+<% @gymnasts.each do |gymnast| %>
 	<tr>
-		<td><%= gymnsat.id %></td>
 		<td><%= gymnast.name %></td>
 		<td><%= gymnast.college %></td>
-		<td><%= gymnast.class %></td>
+		<td><%= gymnast.classz %></td>
+		<td><%= gymnast.meet.name %></td>
+		
+		<td><%= link_to "show gymnast", gymnast_path(gymnast.id) %></td>
+		<td><%= link_to "edit gymnast", edit_gymnast_path(gymnast.id) %></td>
+		<td><%= link_to "delete gymnast", gymnast, confirm: "OK to delete?", method: :delete %></td>
 	</tr>
 <% end %>
 </table>

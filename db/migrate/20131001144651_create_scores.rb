@@ -6,6 +6,7 @@ class CreateScores < ActiveRecord::Migration
       t.float :beam
       t.float :floor
       t.float :all_around
+      t.integer :gymnast_id
 
       t.timestamps
     end

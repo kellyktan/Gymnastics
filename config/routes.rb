@@ -1,10 +1,10 @@
 MeetDatabase::Application.routes.draw do
   
-  resources :scores
+  resources :meets
 
   resources :gymnasts
 
-  resources :meets
+  resources :scores
 
   get "landing_pages/home"
 

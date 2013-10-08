@@ -6,10 +6,13 @@
 	</tr>
 <% @meets.each do |meet| %>
 	<tr>
-		<td><%= meet.id %></td>
 		<td><%= meet.name %></td>
 		<td><%= meet.date %></td>
 		<td><%= meet.location %></td>
+		
+		<td><%= link_to "show meet", meet_path(meet.id) %></td>
+		<td><%= link_to "edit meet", edit_meet_path(meet.id) %></td>
+		<td><%= link_to "delete meet", meet, confirm: "OK to delete?", method: :delete %></td>
 	</tr>
 <% end %>
 </table>

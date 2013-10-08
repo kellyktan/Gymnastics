@@ -2,7 +2,7 @@ class CreateMeets < ActiveRecord::Migration
   def change
     create_table :meets do |t|
       t.string :name
-      t.datetime :date
+      t.date :date
       t.string :location
 
       t.timestamps
