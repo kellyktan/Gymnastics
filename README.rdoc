@@ -1,5 +1,6 @@
 Heroku page: http://sheltered-hollows-7106.herokuapp.com
 
-Issues:  Github wouldn't let me push my app or create a new repository so I ended up creating a new Github account
-		 I had an invalid type in my migrate file so 'rake db:migrate' didn't work
-		 Heroku wouldn't work - had some syntax wrong
+Changes: I linked my 3 data tables (Meet, Gymnast, Score)
+
+Issues:  I used a keyword as a variable name and then my Gymnast table disapppeared
+		 I had to setup the migrations again
