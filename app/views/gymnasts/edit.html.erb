@@ -19,5 +19,17 @@
 	<div class="actions">
 		<%= f.submit %>
 	</div>
+	
+	<% if @gymnast.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@gymnast.errors.count, "error") %> prohibited this gymnast from being saved:</h2>
+	 
+	    <ul>
+	    <% @gymnast.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
 <% end %>
 
