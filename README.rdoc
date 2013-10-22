@@ -3,6 +3,5 @@ Heroku page: http://sheltered-hollows-7106.herokuapp.com
 Changes: I added validations (presence, uniqueness, numericality)
 		 I attempted to add a menu
 
-Issues: The validations work (i.e., it won't let you create a meet w/o a name), but my messages for my validations aren't showing up...
-		I haven't implemented bootstrap javascript/css yet so the dropdown menu didn't work (but you can still see the menu items on each page)
+Issues: I haven't implemented bootstrap javascript/css yet so the dropdown menu didn't work (but you can still see the menu items on each page)
 			(not quite sure how...)
