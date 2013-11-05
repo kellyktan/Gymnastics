@@ -17,6 +17,7 @@ class MeetsController < ApplicationController
       redirect_to root_path
     else
       if @meet.save
+        Notifications.new_meet(@meet, current_host).deliver
         redirect_to meets_path
       else
         render 'new'
