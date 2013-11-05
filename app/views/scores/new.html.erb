@@ -1,27 +1,27 @@
 <%= form_for(@score) do |f| %>
 	<div class="field">
-		<p>vault</p>
+		<p>Gymnast</p>
+		<%= f.collection_select :gymnast_id, Gymnast.where(meet_id: current_host.meets), :id, :name %>
+	</div>
+	<div class="field">
+		<p>Vault</p>
 		<%= f.number_field :vault, :min => 0.0, :max => 10.0, :step => 0.025 %>
 	</div>
 	<div class="field">
-		<p>bars</p>
+		<p>Bars</p>
 		<%= f.number_field :bars, :min => 0, :max => 10, :step => 0.025 %>
 	</div>
 	<div class="field">
-		<p>beam</p>
+		<p>Beam</p>
 		<%= f.number_field :beam, :min => 0, :max => 10, :step => 0.025 %>
 	</div>
 	<div class="field">
-		<p>floor</p>
+		<p>Floor</p>
 		<%= f.number_field :floor, :min => 0, :max => 10, :step => 0.025 %>
 	</div>
 	<div class="field">
-		<p>all_around</p>
-		<%= f.number_field :all_around, :min => 0, :max => 10, :step => 0.025 %>
-	</div>
-	<div class="field">
-		<p>gymnast</p>
-		<%= f.collection_select :gymnast_id, Gymnast.all, :id, :name %>
+		<p>All Around</p>
+		<%= f.number_field :all_around, :min => 0, :max => 40, :step => 0.025 %>
 	</div>
 
 	<div class="actions">

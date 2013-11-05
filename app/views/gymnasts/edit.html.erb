@@ -13,7 +13,7 @@
 	</div>
 	<div class="field">
 		<p>Meet</p>
-		<%= f.collection_select :meet_id, Meet.all, :id, :name %>
+		<%= f.collection_select :meet_id, current_host.meets, :id, :name %>
 	</div>
 	
 	<div class="actions">

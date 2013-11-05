@@ -4,15 +4,23 @@ class MeetsController < ApplicationController
   end
   
   def index
-    @meets = Meet.all
+    if host_signed_in?
+      @meets = Meet.where(host_id:current_host)
+    else
+      @meets = []
+    end
   end
 
   def create
     @meet = Meet.new(params[:meet])
-    if @meet.save
-      redirect_to meets_path
+    if(@meet.host_id != current_host.id)
+      redirect_to root_path
     else
-      render 'new'
+      if @meet.save
+        redirect_to meets_path
+      else
+        render 'new'
+      end
     end
   end
   

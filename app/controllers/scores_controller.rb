@@ -4,7 +4,14 @@ class ScoresController < ApplicationController
   end
 
   def index
-    @scores = Score.all
+    if host_signed_in?
+      @host = current_host
+      @meets = Meet.where(host_id: current_host.id)
+      @gymnasts = Gymnast.where(meet_id: @meets)
+      @scores = Score.where(gymnast_id: @gymnasts)
+    else
+      @score = []
+    end  
   end
   
   def create

@@ -1,5 +1,23 @@
 MeetDatabase::Application.routes.draw do
   
+  devise_for :hosts
+
+  get "hosts/index"
+
+  get "hosts/new"
+
+  get "hosts/edit"
+
+  get "hosts/show"
+
+  get "host_controller/index"
+
+  get "host_controller/new"
+
+  get "host_controller/edit"
+
+  get "host_controller/show"
+
   resources :meets
 
   resources :gymnasts

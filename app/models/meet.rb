@@ -1,5 +1,5 @@
 class Meet < ActiveRecord::Base
-  attr_accessible :id, :date, :location, :name
+  attr_accessible :id, :date, :location, :name, :host_id
   
   has_many :gymnasts, :dependent => :destroy
   

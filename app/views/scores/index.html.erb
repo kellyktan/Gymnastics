@@ -1,13 +1,15 @@
 <table>
 	<tr>
-		<td>vault</td>
-		<td>bars</td>
-		<td>beam</td>
-		<td>floor</td>
-		<td>all_around</td>
+		<td>Name</td>
+		<td>Vault</td>
+		<td>Bars</td>
+		<td>Beam</td>
+		<td>Floor</td>
+		<td>All Around</td>
 	</tr>
 <% @scores.each do |score| %>
 	<tr>
+		<td><%= score.gymnast.name %></td>
 		<td><%= score.vault %></td>
 		<td><%= score.bars %></td>
 		<td><%= score.beam %></td>

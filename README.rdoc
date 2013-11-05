@@ -1,7 +1,5 @@
 Heroku page: http://sheltered-hollows-7106.herokuapp.com
 
-Changes: I added validations (presence, uniqueness, numericality)
-		 I attempted to add a menu
+Changes: I installed devise and added a new table "Host" that logs in through email
 
-Issues: I haven't implemented bootstrap javascript/css yet so the dropdown menu didn't work (but you can still see the menu items on each page)
-			(not quite sure how...)
+Issues: Devise wouldn't install so I went to office hours.  I also had issues only letting the host see his data.  I went to office hours.

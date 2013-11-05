@@ -4,7 +4,11 @@ class GymnastsController < ApplicationController
   end
 
   def index
-    @gymnasts = Gymnast.all
+    if host_signed_in?
+      @gymnasts = Gymnast.where(meet_id: current_host.meets)
+    else
+      @gymnasts = []
+    end
   end
   
   def create
