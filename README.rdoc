@@ -1,5 +1,5 @@
 Heroku page: http://sheltered-hollows-7106.herokuapp.com
 
-Changes: I installed devise and added a new table "Host" that logs in through email
+Changes: I added a mailer
 
-Issues: Devise wouldn't install so I went to office hours.  I also had issues only letting the host see his data.  I went to office hours.
+Issues:
