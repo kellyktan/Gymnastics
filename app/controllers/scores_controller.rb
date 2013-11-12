@@ -9,7 +9,6 @@ class ScoresController < ApplicationController
       @meets = Meet.where(host_id: current_host.id)
       @gymnasts = Gymnast.where(meet_id: @meets)
       @scores = Score.where(gymnast_id: @gymnasts)
-      @ordered = @scores.order("all_around DESC")
     else
       @score = []
     end  

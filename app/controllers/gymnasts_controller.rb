@@ -6,7 +6,7 @@ class GymnastsController < ApplicationController
   def index
     if host_signed_in?
       @gymnasts = Gymnast.where(meet_id: current_host.meets)
-      @ordered = @gymnasts.order("name DESC")
+      @ordered = @gymnasts.in_order
     else
       @gymnasts = []
     end

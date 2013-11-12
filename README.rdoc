@@ -1,5 +1,5 @@
 Heroku page: http://sheltered-hollows-7106.herokuapp.com
 
-Changes: I added scope
+Changes: I added scope in my model and used it in my controllers and views
 
 Issues:

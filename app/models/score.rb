@@ -3,5 +3,7 @@ class Score < ActiveRecord::Base
   
   belongs_to :gymnast
   
+  scope :in_order, -> {order("all_around DESC")}
+  
   validates :vault, :bars, :beam, :floor, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 10, message: "Event scores must be between 0.00 and 10.00"}
 end
