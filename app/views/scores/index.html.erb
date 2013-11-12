@@ -1,24 +1,26 @@
 <table>
 	<tr>
-		<td>Name</td>
-		<td>Vault</td>
-		<td>Bars</td>
-		<td>Beam</td>
-		<td>Floor</td>
-		<td>All Around</td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Meet</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Name</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Vault</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Bars</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Beam</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Floor</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>All Around</b></td>
 	</tr>
-<% @scores.each do |score| %>
+<% @ordered.each do |score| %>
 	<tr>
-		<td><%= score.gymnast.name %></td>
-		<td><%= score.vault %></td>
-		<td><%= score.bars %></td>
-		<td><%= score.beam %></td>
-		<td><%= score.floor %></td>
-		<td><%= score.all_around %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= score.gymnast.meet.name %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= score.gymnast.name %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= score.vault %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= score.bars %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= score.beam %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= score.floor %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= score.all_around %></td>
 
-		<td><%= link_to "show score", score_path(score.id) %></td>
-		<td><%= link_to "edit score", edit_score_path(score.id) %></td>
-		<td><%= link_to "delete score", score, confirm: "OK to delete?", method: :delete %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Show", score_path(score.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Edit", edit_score_path(score.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Delete", score, confirm: "OK to delete?", method: :delete %></td>
 	</tr>
 <% end %>
 </table>

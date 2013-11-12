@@ -9,6 +9,7 @@ class ScoresController < ApplicationController
       @meets = Meet.where(host_id: current_host.id)
       @gymnasts = Gymnast.where(meet_id: @meets)
       @scores = Score.where(gymnast_id: @gymnasts)
+      @ordered = @scores.order("all_around DESC")
     else
       @score = []
     end  
@@ -17,6 +18,8 @@ class ScoresController < ApplicationController
   def create
     @score = Score.new(params[:score])
     if @score.save
+      @score.all_around = ([@score.vault, @score.bars, @score.beam, @score.floor].inject(:+) * 1000).round / 1000.0
+      @score.save
       redirect_to scores_path
     else
       render 'new'
@@ -34,6 +37,8 @@ class ScoresController < ApplicationController
   def update
     @score = Score.find(params[:id])
     if @score.update_attributes(params[:score])
+      @score.all_around = ([@score.vault, @score.bars, @score.beam, @score.floor].inject(:+) * 1000).round / 1000.0
+      @score.save
       redirect_to score_path(@score.id)
     else
       render 'edit'

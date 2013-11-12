@@ -10,5 +10,5 @@ class Host < ActiveRecord::Base
   
   validates :name, :email, :password, presence: {message: "Field cannot be blank"}
   emailFormatValidation = /[a-z.-]+@[a-z \d .-]+.[a-z]+/i
-  validates :email, format: {with: emailFormatValidation}, uniqueness: true
+  validates :email, format: {with: emailFormatValidation}, uniqueness: {case_sensitive: false}
 end

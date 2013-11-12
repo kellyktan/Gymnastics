@@ -6,6 +6,7 @@ class MeetsController < ApplicationController
   def index
     if host_signed_in?
       @meets = Meet.where(host_id:current_host)
+      @ordered = @meets.order("date DESC")
     else
       @meets = []
     end

@@ -1,20 +1,20 @@
 <table>
 	<tr>
-		<td>Name</td>
-		<td>College</td>
-		<td>Class</td>
-		<td>Meet</td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Name</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>College</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Class</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Meet</b></td>
 	</tr>
-<% @gymnasts.each do |gymnast| %>
+<% @ordered.each do |gymnast| %>
 	<tr>
-		<td><%= gymnast.name %></td>
-		<td><%= gymnast.college %></td>
-		<td><%= gymnast.classz %></td>
-		<td><%= gymnast.meet.name %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= gymnast.name %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= gymnast.college %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= gymnast.classz %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= gymnast.meet.name %></td>
 		
-		<td><%= link_to "show gymnast", gymnast_path(gymnast.id) %></td>
-		<td><%= link_to "edit gymnast", edit_gymnast_path(gymnast.id) %></td>
-		<td><%= link_to "delete gymnast", gymnast, confirm: "OK to delete?", method: :delete %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Show", gymnast_path(gymnast.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Edit", edit_gymnast_path(gymnast.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Delete", gymnast, confirm: "OK to delete?", method: :delete %></td>
 	</tr>
 <% end %>
 </table>

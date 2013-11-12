@@ -1,22 +1,22 @@
 <%= form_for(@meet) do |f| %>
 	<div class="field">
-		<p>Name</p>
-		<%= f.text_field :name %>
+		<p>&nbsp&nbsp&nbsp&nbsp<b>Name</b></p>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.text_field :name %></p>
 	</div>
 	<div class="field">
-		<p>Date</p>
-		<%= f.date_select :date %>
+		<p>&nbsp&nbsp&nbsp&nbsp<b>Date</b></p>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.date_select :date %></p>
 	</div>
 	<div class="field">
-		<p>Location</p>
-		<%= f.text_field :location %>
+		<p>&nbsp&nbsp&nbsp&nbsp<b>Location</b></p>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.text_field :location %></p>
 	</div>
 	<div>
 		<%=f.hidden_field:host_id, :value => current_host.id%>
 	</div>
 	
 	<div class="actions">
-		<%= f.submit %>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.submit %></p>
 	</div>
 	
 	<% if @meet.errors.any? %>

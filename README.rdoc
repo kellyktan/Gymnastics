@@ -1,5 +1,5 @@
 Heroku page: http://sheltered-hollows-7106.herokuapp.com
 
-Changes: I added a mailer
+Changes: I added scope
 
 Issues:

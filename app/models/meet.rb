@@ -3,5 +3,5 @@ class Meet < ActiveRecord::Base
   
   has_many :gymnasts, :dependent => :destroy
   
-  validates :name, presence: {message: "'Name' field cannot be blank"}, uniqueness: {message: "Meet with this name already exists"}
+  validates :name, presence: {message: "'Name' field cannot be blank"}, uniqueness: {message: "Meet with this name already exists", scope: :host_id}
 end

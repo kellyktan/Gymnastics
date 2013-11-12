@@ -1,23 +1,23 @@
 <%= form_for(@gymnast) do |f| %>
 	<div class="field">
-		<p>Name</p>
-		<%= f.text_field :name %>
+		<p>&nbsp&nbsp&nbsp&nbsp<b>Name</b></p>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.text_field :name %></p>
 	</div>
 	<div class="field">
-		<p>College</p>
-		<%= f.text_field :college %>
+		<p>&nbsp&nbsp&nbsp&nbsp<b>College</b></p>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.text_field :college %></p>
 	</div>
 	<div class="field">
-		<p>Class</p>
-		<%= f.number_field :classz, :min => 1995, :max => 2030 %>
+		<p>&nbsp&nbsp&nbsp&nbsp<b>Class</b></p>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.number_field :classz, :min => 2014, :max => 2030 %></p>
 	</div>
 	<div class="field">
-		<p>Meet</p>
-		<%= f.collection_select :meet_id, current_host.meets, :id, :name %>
+		<p>&nbsp&nbsp&nbsp&nbsp<b>Meet</b></p>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.collection_select :meet_id, current_host.meets, :id, :name %></p>
 	</div>
 	
 	<div class="actions">
-		<%= f.submit %>
+		<p>&nbsp&nbsp&nbsp&nbsp<%= f.submit %></p>
 	</div>
 	
 	<% if @gymnast.errors.any? %>
