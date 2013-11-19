@@ -1,5 +1,5 @@
 Heroku page: http://sheltered-hollows-7106.herokuapp.com
 
-Changes: I added scope in my model and used it in my controllers and views
+Changes: I added jQuery functionality to my menu and div in application.html.erb
 
-Issues:
+Issues:  It wouldn't work in the .css or .js files
