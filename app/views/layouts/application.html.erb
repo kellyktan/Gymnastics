@@ -8,6 +8,11 @@
   <%= csrf_meta_tags %>
    <link rel="stylesheet" type="text/css" ref="../bootstrap.css">
   <script src="../bootstrap.js"></script>
+  
+  <style>
+  	
+  	
+  </style>
 </head>
 <body>
 
@@ -74,19 +79,19 @@
 </body>
 </html>
 
-<script type="text/javascript">
-$( function(){
-       $(".dropdown-toggle").mouseenter(function(){
-             $(".dropdown-toggle").css("background-color","#D0D0D0");
-       });
-       $(".dropdown-toggle").mouseleave(function(){
-       		 $(".dropdown-toggle").css("background-color","#FFFFFF");
-       })
-       $("div").mouseenter(function(){
-             $("div").css("color","red");
-       });
-       $("div").mouseleave(function(){
-       		 $("div").css("color","black");
-       });
-});
+<script>
+	$( function(){
+	       $(".dropdown-toggle").mouseenter(function(){
+	       		 $(this).css("background-color","#D0D0D0");
+	       });
+	       $(".dropdown-toggle").mouseleave(function(){
+	       		 $(".dropdown-toggle").css("background-color","#FFFFFF");
+	       });
+	       $("div").mouseenter(function(){
+	             $("div").css("color","red");
+	       });
+	       $("div").mouseleave(function(){
+	       		 $("div").css("color","black");
+	       });
+	});
 </script>
