@@ -15,7 +15,7 @@ class GymnastsController < ApplicationController
   def create
     @gymnast = Gymnast.new(params[:gymnast])
     if @gymnast.save
-      redirect_to gymnasts_path
+      redirect_to new_score_path
     else
       render 'new'
     end
@@ -23,6 +23,7 @@ class GymnastsController < ApplicationController
   
   def show
     @gymnast = Gymnast.find(params[:id])
+    @scores = @gymnast.scores
   end
   
   def edit

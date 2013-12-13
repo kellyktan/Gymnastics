@@ -18,7 +18,7 @@
 		<td>&nbsp&nbsp&nbsp&nbsp<%= score.floor %></td>
 		<td>&nbsp&nbsp&nbsp&nbsp<%= score.all_around %></td>
 
-		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Show", score_path(score.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Show", gymnast_path(score.gymnast_id) %></td>
 		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Edit", edit_score_path(score.id) %></td>
 		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Delete", score, confirm: "OK to delete?", method: :delete %></td>
 	</tr>

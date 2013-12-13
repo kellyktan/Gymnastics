@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Name</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Date</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<b>Location</b></td>
+	</tr>
+<% @ordered.each do |meet| %>
+	<tr>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= meet.name %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= meet.date %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= meet.location %></td>
+		
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Show", meet_path(meet.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Edit", edit_meet_path(meet.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp<%= link_to "Delete", meet, confirm: "OK to delete?", method: :delete %></td>
+	</tr>
+<% end %>
+</table>

@@ -19,7 +19,7 @@ class ScoresController < ApplicationController
     if @score.save
       @score.all_around = ([@score.vault, @score.bars, @score.beam, @score.floor].inject(:+) * 1000).round / 1000.0
       @score.save
-      redirect_to scores_path
+      redirect_to meet_path(@score.gymnast.meet_id)
     else
       render 'new'
     end
@@ -38,7 +38,7 @@ class ScoresController < ApplicationController
     if @score.update_attributes(params[:score])
       @score.all_around = ([@score.vault, @score.bars, @score.beam, @score.floor].inject(:+) * 1000).round / 1000.0
       @score.save
-      redirect_to score_path(@score.id)
+      redirect_to meet_path(@score.gymnast.meet_id)
     else
       render 'edit'
     end
@@ -46,7 +46,8 @@ class ScoresController < ApplicationController
   
   def destroy
     @score = Score.find(params[:id])
+    @id = @score.gymnast.meet_id
     @score.destroy
-    redirect_to scores_path
+    redirect_to meet_path(@score.gymnast.meet_id)
   end
 end

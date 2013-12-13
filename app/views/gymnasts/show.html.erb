@@ -1,3 +1,30 @@
 <h2>&nbsp&nbsp<%= @gymnast.name %></h2>
 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCollege: <%= @gymnast.college %></p>
 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspClass of <%= @gymnast.classz %></p>
+<BR>
+<h4>&nbsp&nbsp&nbsp&nbspScores:</h4>
+<table>
+	<tr>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Vault</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Bars</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Beam</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Floor</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>All Around</b></td>
+	</tr>
+<% @scores.in_order.each do |score| %>
+	<tr>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.vault %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.bars %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.beam %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.floor %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.all_around %></td>
+
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Edit", edit_score_path(score.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Delete", score, confirm: "OK to delete?", method: :delete %></td>
+	</tr>
+<% end %>
+</table>
+
+<% if @scores.size == 0 -%>
+	<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Add Score", new_score_path() %></td>
+<% end -%>

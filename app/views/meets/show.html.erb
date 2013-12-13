@@ -1,3 +1,33 @@
 <h2>&nbsp&nbsp<%= @meet.name %></h2>
 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDate: <%= @meet.date %></p>
 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLocation: <%= @meet.location %></p>
+<BR>
+<h4>&nbsp&nbsp&nbsp&nbspResults:</h4>
+<table>
+	<tr>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Name</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Vault</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Bars</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Beam</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Floor</b></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>All Around</b></td>
+	</tr>
+<% @scores.in_order.each do |score| %>
+	<tr>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.gymnast.name %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.vault %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.bars %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.beam %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.floor %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= score.all_around %></td>
+
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Show", gymnast_path(score.gymnast_id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Edit", edit_score_path(score.id) %></td>
+		<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Delete", score, confirm: "OK to delete?", method: :delete %></td>
+	</tr>
+<% end %>
+</table>
+
+<% if @scores.size == 0 -%>
+	<td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Add Gymnast", new_gymnast_path() %></td>
+<% end -%>

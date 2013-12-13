@@ -7,5 +7,6 @@ class Gymnast < ActiveRecord::Base
   
   scope :in_order, -> {order("name DESC")}
   
-  validates :name, presence: {message: "'Name' field cannot be blank"}, uniqueness: {message: "Gymnast with this name already exists", scope: :meet_id}
+  validates :meet_id, presence: {message: "Field cannot be blank. Must create a meet first!"}
+  validates :name, presence: {message: "Field cannot be blank"}, uniqueness: {message: "Gymnast with this name already exists", scope: :meet_id}
 end

@@ -1,5 +1,41 @@
-Heroku page: http://sheltered-hollows-7106.herokuapp.com
+My Gymnastics Meet Database
 
-Changes: I added jQuery functionality to my menu and div in application.html.erb
+This app allows gymnastics meet hosts to keep track of their meets, the gymnasts that
+particpate in them, and their respective scores.
 
-Issues:  It wouldn't work in the .css or .js files
+Database Stucture:
+Hosts - has many Meets
+Meets - belongs to Host, has many Gymnasts
+Gymnasts - belongs to Meet, has many Scores
+Scores - belongs to Gymnast
+
+Validations:
+host email and password are present and unique (and email is of the proper format)
+meet name is present and unique
+gymnast meet_id is present
+gymnast name is present and unique
+score gymnast_id is present
+scores are between 0 and 10
+
+Scope:
+shows logged-in host's meets, gymnasts, and scores
+meet index is ordered by date
+gymnast index is ordered by name
+score index is ordered by all around
+when showing a meet, it also shows that meet's gymnasts' scores
+when showing a gymnnast, it also shows that gymnast's scores
+
+CSS/JavaScript:
+I use bootstrap's CSS formatting
+I have a function where the nav bar selection background become gray whenever the mouse is hovering over it
+	(this is implemented in the layout application view, as it wasn't working in the javascripts)
+
+Gems/Addons:
+My devise gem allows for users to log in with their emails and the SendGrid addon allows
+for emailing functionality
+
+Documentation:
+Devise: https://github.com/plataformatec/devise
+SendGrid: https://devcenter.heroku.com/articles/sendgrid
+
+Heroku page: http://my-gymnastics-database.herokuapp.com

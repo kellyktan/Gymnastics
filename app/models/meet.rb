@@ -5,5 +5,5 @@ class Meet < ActiveRecord::Base
   
   scope :in_order, -> {order("date DESC")}
   
-  validates :name, presence: {message: "'Name' field cannot be blank"}, uniqueness: {message: "Meet with this name already exists", scope: :host_id}
+  validates :name, presence: {message: "Field cannot be blank"}, uniqueness: {message: "Meet with this name already exists", scope: :host_id}
 end

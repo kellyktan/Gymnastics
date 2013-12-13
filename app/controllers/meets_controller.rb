@@ -28,6 +28,8 @@ class MeetsController < ApplicationController
   
   def show
     @meet = Meet.find(params[:id])
+    @gymnasts = @meet.gymnasts
+    @scores = Score.where(gymnast_id: @gymnasts)
   end
   
   def edit
